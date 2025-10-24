@@ -1,0 +1,23 @@
+1] List all books.
+2] List all members.
+3] List all issued books.
+4] List books with available copies greater than 3.
+5] show all books published by "TechPress".
+6] show all members whose name start with "A".
+7] Find all books issued by member_id=101.
+8] List member who have issued more than 1 book.
+9] show which books have been issued along with the member name.
+10] show all books that have never been issued.
+11] Find the books with available copiea less than 5.
+12] show issued boooks that are not yet returned (return_date is nulll).
+13] count the number of books issued per member.
+14] count number of books issued per book.
+15] Find average available copies per publisher.
+16] show books that where returned in october.
+17] maximum copies available copies per publisher.
+18] count book issued each month.
+19] List members who issued books published by "TechPress".
+20] Find books whose available copies are less than the average available copies.
+21] show the name , title,issue date,return date . 
+22] update books avalable_copies is 1 where book_id is 1.
+23] update the data add 1 and available copies where book_id is 1.
