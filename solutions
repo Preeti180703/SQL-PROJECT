@@ -1,0 +1,118 @@
+1]
+select * from books;
+2]
+select * from members;
+3]
+select * from issued_books;
+4]
+  select title,author,available_copies
+  from books
+  where available_copies>3;
+5]
+  select * from books 
+  where publisher="TechPress";
+6]
+  select * from members 
+  where name like "A%";
+7]
+  select b.book_id,b.title,b.publisher,b.author
+  from books as b
+  join issued_books as i
+  using(book_id)
+  where member_id=101;
+8]
+  select member_id, count(book_id) as total_books_issued
+  from issued_books
+  group by member_id
+  having count(book_id) > 1;
+9]
+  select b.book_id, b.title, b.author, b.publisher,
+       m.member_id, m.name,
+       i.issue_date, i.return_date
+  from issued_books as i
+  join books as b 
+  on i.book_id = b.book_id
+  join members as m 
+  on i.member_id = m.member_id;
+10]
+    select b.book_id, b.title, b.author, b.publisher, b.available_copies
+    from books b
+    left join issued_books i on b.book_id = i.book_id
+    where i.book_id is null;
+11]
+   select title,author,available_copies
+   from books
+   where available_copies<5;
+12]
+   select title,author,available_copies
+   from books
+   join issued_books
+   using(book_id)
+   where return_date is null;
+13]
+   select member_id, count(book_id) AS total_books_issued
+   from issued_books
+   group by  member_id;
+14]
+   select book_id, count(member_id) AS total_issued
+   from issued_books
+   group by book_id;
+15]
+   select publisher, avg(available_copies) AS avg_available_copies
+   from books
+   group by publisher;
+16]
+   SELECT *
+   FROM issued_books
+   WHERE return_date LIKE '%-10-%';
+17]
+   select publisher, max(available_copies) AS max_available_copies
+   from books
+   group by publisher;
+18]
+    select month(issue_date) as issue_month, 
+    count(*) as total_issued
+    from issued_books
+    group by month(issue_date)
+    order by month(issue_date);
+19]
+   select distinct member_id
+   from issued_books
+    where book_id in (
+    select book_id
+    from books
+    where publisher = 'TechPress');
+20]
+    select *
+    from books
+    where available_copies < (
+    select avg(available_copies)
+    from books);
+21]
+  select m.name,b.title,i.issue_date,i.return_date
+   from issued_books as i
+   join members as m
+   on i.member_id=m.member_id
+   join books as b
+   on i.book_id=b.book_id;
+22]
+   update books 
+   set available_copies=1 
+   where book_id=1;
+   select * from books;
+23]
+   update books 
+   set available_copies=available_copies+1 
+   where book_id=1;
+
+    select * from books;
+
+
+
+
+
+
+
+
+
+
